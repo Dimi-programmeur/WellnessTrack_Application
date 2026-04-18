@@ -19,7 +19,7 @@ st.title("📊 WellnessTrack - Collecte et Analyse des Données de Santé")
 st.markdown("*Application de suivi des habitudes de vie et analyse descriptive Built by Dimitri*")
 
 # Initialisation du fichier de données
-DATA_FILE = "wellness_data.csv"
+DATA_FILE = "Dimitri_wellness_data.csv"
 
 def init_data():
     if not os.path.exists(DATA_FILE):
@@ -143,7 +143,7 @@ if len(df) > 0:
                          title="Corrélations entre variables")
         st.plotly_chart(fig3, use_container_width=True)
         
-        st.info("💡 Interprétation : Plus la valeur est proche de 1 ou -1, plus la corrélation est forte.")
+        st.info("💡 Interprétation : Plus la valeur est proche de 1 ou -1, plus la corrélation est forte. Une corrélation proche de 1 : Les variables augmentent ensemble et Proche de -1 : l'une augmente quand l'autre diminue")
     
     with tab4:
         st.subheader("Données collectées")
@@ -151,10 +151,10 @@ if len(df) > 0:
         
         # Export
         csv = df.to_csv(index=False).encode('utf-8')
-        st.download_button("📥 Télécharger les données (CSV)", csv, "wellness_data.csv", "text/csv")
+        st.download_button("📥 Télécharger les données (CSV)", csv, "Dimitri_wellness_data.csv", "text/csv")
 else:
     st.info("ℹ️ Aucune donnée collectée pour le moment. Utilisez le formulaire ci-dessus.")
 
 # Pied de page
 st.markdown("---")
-st.markdown("*Application développée pour le TP INF232 EC2 - Collecte et analyse de données*")
+st.markdown("*Application développée pour le TP INF232 EC2 par l'étudiant NANBOU ZETANG MBANGA DIMITRI - Collecte et analyse de données*")
